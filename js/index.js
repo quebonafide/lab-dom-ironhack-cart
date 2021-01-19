@@ -36,6 +36,8 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
+  let template = document.createElement('tr')
+
   const nameInput = document.querySelector('#cart > tfoot > tr > td:nth-child(1) > input[type=text]').innerText;
   const priceInput = document.querySelector('#cart > tfoot > tr > td:nth-child(2) > input[type=number]').value;
   //... your code goes here
@@ -46,8 +48,7 @@ function createProduct() {
   const clone = product.cloneNode(true);
   document.getElementById('tbody').appendChild(clone);
 }
-const template = document.getElementById('hidden-template')
-console.log(template);
+
 
 
 window.addEventListener('load', () => {
@@ -63,3 +64,4 @@ window.addEventListener('load', () => {
   addElement.addEventListener('click', createProduct);
 
 });
+
