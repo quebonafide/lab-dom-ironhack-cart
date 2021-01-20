@@ -54,14 +54,18 @@ function createProduct() {
     <td class="action">
       <button class="btn btn-remove">Remove</button>
     </td>`;
-  console.log(document.getElementById('tbody'));
- document.getElementById('tbody').appendChild(template);
+    template.querySelector('.btn-remove').addEventListener('click', removeProduct);
+    document.getElementById('tbody').appendChild(template);
+    let nameInput1 = document.querySelector('#cart > tfoot > tr > td:nth-child(1) > input[type=text]');
+    let priceInput1 = document.querySelector('#cart > tfoot > tr > td:nth-child(2) > input[type=number]');
+    nameInput1.value = '';
+    priceInput1.value = 0;
 }
 
 // function recount () {
 //   removeElement = document.getElementsByClassName("btn-remove");
 //   return removeElement;
-// } recount();
+// }recount();
 
 
 window.addEventListener('load', () => {
@@ -70,7 +74,9 @@ window.addEventListener('load', () => {
   //... your code goes here
   
   const removeElement = document.getElementsByClassName("btn-remove");
+
   for(i = 0; i < removeElement.length; i++) {
+    console.log('ssss');
     removeElement[i].addEventListener('click', removeProduct);
   }
 
